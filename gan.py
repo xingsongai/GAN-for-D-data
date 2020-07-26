@@ -103,8 +103,10 @@ class DealDataset():
     def __init__(self):
         # 使用numpy读取数据
         g = os.listdir("data")
+        index = 0
         for filename in g:
-            if filename == 'CC110033.npy':
+            index = index + 1
+            if index == 1:
                 X_train = np.load('data' + '/' + filename).reshape(1, 112, 96, 96)
             else:
                 x = np.load('data' + '/' + filename).reshape(1, 112, 96, 96)
